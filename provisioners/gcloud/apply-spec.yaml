@@ -1,0 +1,9 @@
+applySpecVersion: 1
+spec:
+  configSync:
+    enabled: true
+    sourceFormat: unstructured
+    syncRepo: https://github.com/paulwilljones/gke-acm-bootstrap
+    syncBranch: develop
+    secretType: none
+    policyDir: helm-components
