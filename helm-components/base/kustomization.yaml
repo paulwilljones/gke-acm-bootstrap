@@ -3,3 +3,19 @@ helmCharts:
   repo: https://charts.jetstack.io
   releaseName: cert-manager
   namespace: cert-manager
+  valuesInline:
+    installCRDs: true
+- name: external-dns
+  repo: https://kubernetes-sigs.github.io/external-dns/
+  releaseName: external-dns
+  namespace: external-dns
+- name: argo-cd
+  repo: https://argoproj.github.io/argo-helm
+  releaseName: argocd
+  namespace: argocd
+- name: external-secrets
+  repo: https://charts.external-secrets.io
+  releaseName: external-secrets
+  namespace: external-secrets
+  valuesInline:
+    installCRDs: false
