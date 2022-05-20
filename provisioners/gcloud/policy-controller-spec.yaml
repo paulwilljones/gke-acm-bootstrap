@@ -1,0 +1,12 @@
+applySpecVersion: 1
+spec:
+  configSync:
+    enabled: true
+    sourceFormat: unstructured
+    syncRepo: https://github.com/paulwilljones/gke-acm-bootstrap
+    syncBranch: develop
+    secretType: none
+    policyDir: config-root
+  policyController:
+    enabled: true
+    exemptableNamespaces: ["kube-system", "config-management-system", "config-management-monitoring", "resource-group-system", "asm-system", "gke-connect"]
