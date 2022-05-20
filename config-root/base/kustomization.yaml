@@ -6,20 +6,29 @@ helmCharts:
   repo: https://charts.jetstack.io
   releaseName: cert-manager
   namespace: cert-manager
+  version: 1.8.0
+#   includeCRDs: true
   valuesInline:
     installCRDs: true
     #deploymentAnnotations\.config\.kubernetes\.io/depends-on: apps/namespaces/external-secrets/Deployment/external-secrets
-- name: external-dns
-  repo: https://charts.bitnami.com/bitnami
-  releaseName: external-dns
-  namespace: external-dns
 # - name: argo-cd
 #   repo: https://argoproj.github.io/argo-helm
 #   releaseName: argocd
 #   namespace: argocd
-- name: external-secrets
-  repo: https://charts.external-secrets.io
-  releaseName: external-secrets
-  namespace: external-secrets
-  valuesInline:
-    installCRDs: false
+# - name: external-secrets
+#   repo: https://charts.external-secrets.io
+#   releaseName: external-secrets
+#   namespace: external-secrets
+#   includeCRDs: true
+#   valuesInline:
+#     installCRDs: false
+- name: external-dns
+  repo: https://charts.bitnami.com/bitnami
+  releaseName: external-dns
+  namespace: external-dns
+  version: 6.3.0
+# - name: external-dns
+#   repo: https://kubernetes-sigs.github.io/external-dns/
+#   releaseName: external-dns
+#   namespace: external-dns
+#   version: 1.9.0
