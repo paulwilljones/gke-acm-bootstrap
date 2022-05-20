@@ -9,10 +9,6 @@ helmCharts:
   valuesInline:
     installCRDs: true
     #deploymentAnnotations\.config\.kubernetes\.io/depends-on: apps/namespaces/external-secrets/Deployment/external-secrets
-- name: external-dns
-  repo: https://kubernetes-sigs.github.io/external-dns/
-  releaseName: external-dns
-  namespace: external-dns
 # - name: argo-cd
 #   repo: https://argoproj.github.io/argo-helm
 #   releaseName: argocd
@@ -23,3 +19,7 @@ helmCharts:
   namespace: external-secrets
   valuesInline:
     installCRDs: false
+- name: external-dns
+  repo: https://kubernetes-sigs.github.io/external-dns/
+  namespace: external-dns
+  releaseName: external-dns
