@@ -13,10 +13,9 @@ gcloud beta container hub config-management apply --membership=gke-acm-bootstrap
 gcloud beta container hub config-management unmanage --membership gke-acm-bootstrap
 gcloud beta container hub config-management disable
 gcloud beta container hub memberships unregister gke-bootstrap --gke-cluster=europe-west2/gke-acm-bootstrap
-gcloud container hub memberships register gke-acm-bootstrap --gke-cluster=europe-west2/gke-acm-bootstrap --enable-workload-identity
 ```
 
-```
+```sh
 gcloud container fleet memberships delete gke-acm-bootstrap
 ```
 
