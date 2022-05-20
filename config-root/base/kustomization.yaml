@@ -5,6 +5,7 @@ helmCharts:
   namespace: cert-manager
   valuesInline:
     installCRDs: true
+    deploymentAnnotations\.config\.kubernetes\.io/depends-on: apps/namespaces/external-secrets/Deployment/external-secrets
 - name: external-dns
   repo: https://kubernetes-sigs.github.io/external-dns/
   releaseName: external-dns

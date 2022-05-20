@@ -1,37 +1,37 @@
 import pulumi
 import pulumi_gcp as gcp
 
-cluster = gcp.container.Cluster("cluster",
-    location="us-central1-a",
-    initial_node_count=1,
-    opts=pulumi.ResourceOptions(provider=google_beta))
+cluster = gcp.container.get_cluster(name="gke-acm-bootstrap",
+    location="europe-west2")
 
 membership = gcp.gkehub.Membership("membership",
-    membership_id="my-membership",
+    membership_id="gke-acm-bootstrap",
     endpoint=gcp.gkehub.MembershipEndpointArgs(
         gke_cluster=gcp.gkehub.MembershipEndpointGkeClusterArgs(
-            resource_link=cluster.id.apply(lambda id: f"//container.googleapis.com/{id}"),
+            resource_link=f"//container.googleapis.com/{cluster.id}",
         ),
     ),
-    opts=pulumi.ResourceOptions(provider=google_beta))
+)
 
-feature = gcp.gkehub.Feature("feature",
+feature = gcp.gkehub.Feature(name="configmanagement",
+    resource_name="configmanagement",
     location="global",
-    labels={
-        "foo": "bar",
-    },
-    opts=pulumi.ResourceOptions(provider=google_beta))
+)
 
 feature_member = gcp.gkehub.FeatureMembership("featureMember",
     location="global",
     feature=feature.name,
     membership=membership.membership_id,
     configmanagement=gcp.gkehub.FeatureMembershipConfigmanagementArgs(
-        version="1.6.2",
         config_sync=gcp.gkehub.FeatureMembershipConfigmanagementConfigSyncArgs(
             git=gcp.gkehub.FeatureMembershipConfigmanagementConfigSyncGitArgs(
-                sync_repo="https://github.com/hashicorp/terraform",
+                sync_repo="https://github.com/paulwilljones/gke-acm-bootstrap",
+                sync_branch="develop",
+                policy_dir="config-root",
+                sync_wait_secs="5",
+                secret_type="none"
             ),
+            source_format="unstructured"
         ),
     ),
-    opts=pulumi.ResourceOptions(provider=google_beta))
+)

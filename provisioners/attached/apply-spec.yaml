@@ -6,4 +6,4 @@ spec:
     syncRepo: https://github.com/paulwilljones/gke-acm-bootstrap
     syncBranch: develop
     secretType: none
-    policyDir: config-root/base
+    policyDir: config-root

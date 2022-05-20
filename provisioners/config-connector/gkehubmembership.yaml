@@ -1,10 +1,10 @@
 apiVersion: gkehub.cnrm.cloud.google.com/v1beta1
 kind: GKEHubMembership
 metadata:
-  name: MEMBERSHIP_NAME
+  name: gke-acm-bootstrap
 spec:
   location: global
   endpoint:
     gkeCluster:
       resourceRef:
-        name: CLUSTER_NAME
+        external: //container.googleapis.com/projects/jetstack-paul/locations/europe-west2/clusters/gke-acm-bootstrap

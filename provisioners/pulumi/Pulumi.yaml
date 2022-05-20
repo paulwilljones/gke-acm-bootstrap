@@ -1,0 +1,6 @@
+name: gke-acm-bootstrap
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: GCP Pulumi program to bootstrap GKE clusters using ACM and Config Sync

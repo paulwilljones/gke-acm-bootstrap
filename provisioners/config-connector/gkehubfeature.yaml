@@ -1,0 +1,11 @@
+apiVersion: gkehub.cnrm.cloud.google.com/v1beta1
+kind: GKEHubFeature
+metadata:
+  name: gke-acm-bootstrap
+spec:
+  projectRef:
+    external: jetstack-paul
+  location: global
+  # The resourceID must be "configmanagement" if you want to use Anthos config
+  # management feature.
+  resourceID: configmanagement
