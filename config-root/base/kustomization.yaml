@@ -27,11 +27,12 @@ helmCharts:
 #   namespace: argocd
 - name: external-secrets
   repo: https://charts.external-secrets.io
+  version: 0.5.3
   releaseName: external-secrets
   namespace: external-secrets
-  includeCRDs: true
+  includeCRDs: false
   valuesInline:
-    installCRDs: true
+    installCRDs: false # CRDs have status in the definition which fails reconciler https://g.co/cloud/acm-errors#knv1045
 # - name: external-dns
 #   repo: https://charts.bitnami.com/bitnami
 #   releaseName: external-dns
