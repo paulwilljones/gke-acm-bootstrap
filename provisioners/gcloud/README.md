@@ -1,7 +1,7 @@
 # `gcloud`
 
 ```sh
-gcloud container fleet memberships register gke-acm-bootstrap --gke-cluster=gke-acm-bootstrap --enable-workload-identity
+gcloud container fleet memberships register gke-acm-bootstrap --gke-cluster=europe-west2/gke-acm-bootstrap --enable-workload-identity
 gcloud services enable anthos.googleapis.com
 gcloud beta container hub config-management enable
 gcloud beta container hub config-management apply --membership=gke-acm-bootstrap --config=apply-spec.yaml
