@@ -21,10 +21,6 @@ helmCharts:
   version: 6.29.4
   releaseName: grafana
   namespace: grafana
-# - name: argo-cd
-#   repo: https://argoproj.github.io/argo-helm
-#   releaseName: argocd
-#   namespace: argocd
 - name: external-secrets
   repo: https://charts.external-secrets.io
   version: 0.5.3
@@ -33,6 +29,8 @@ helmCharts:
   includeCRDs: false
   valuesInline:
     installCRDs: false # CRDs have status in the definition which fails reconciler https://g.co/cloud/acm-errors#knv1045
+    certController:
+      create: false
 # - name: external-dns
 #   repo: https://charts.bitnami.com/bitnami
 #   releaseName: external-dns
@@ -46,3 +44,9 @@ helmCharts:
 #   releaseName: external-dns
 #   namespace: external-dns
 #   version: 1.9.0
+- name: traefik
+  repo: https://helm.traefik.io/traefik
+  version: 10.19.5
+  releaseName: traefik
+  namespace: traefik
+  includeCRDs: true
