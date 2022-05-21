@@ -15,7 +15,12 @@ helmCharts:
   repo: https://prometheus-community.github.io/helm-charts
   version: 15.9.0
   releaseName: prometheus
-  namespace: monitoring
+  namespace: prometheus
+- name: grafana
+  repo: https://grafana.github.io/helm-charts
+  version: 6.29.4
+  releaseName: grafana
+  namespace: grafana
 # - name: argo-cd
 #   repo: https://argoproj.github.io/argo-helm
 #   releaseName: argocd
