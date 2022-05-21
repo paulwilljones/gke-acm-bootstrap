@@ -31,6 +31,8 @@ helmCharts:
     installCRDs: false # CRDs have status in the definition which fails reconciler https://g.co/cloud/acm-errors#knv1045
     certController:
       create: false
+    webhook:
+      create: false
 # - name: external-dns
 #   repo: https://charts.bitnami.com/bitnami
 #   releaseName: external-dns
@@ -44,9 +46,3 @@ helmCharts:
 #   releaseName: external-dns
 #   namespace: external-dns
 #   version: 1.9.0
-- name: traefik
-  repo: https://helm.traefik.io/traefik
-  version: 10.19.5
-  releaseName: traefik
-  namespace: traefik
-  includeCRDs: false
