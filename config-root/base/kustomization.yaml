@@ -49,4 +49,4 @@ helmCharts:
   version: 10.19.5
   releaseName: traefik
   namespace: traefik
-  includeCRDs: true
+  includeCRDs: false
