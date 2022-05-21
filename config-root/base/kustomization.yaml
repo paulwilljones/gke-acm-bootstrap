@@ -11,6 +11,11 @@ helmCharts:
   valuesInline:
     installCRDs: true
     #deploymentAnnotations\.config\.kubernetes\.io/depends-on: apps/namespaces/external-secrets/Deployment/external-secrets
+- name: nginx-ingress-controller
+  repo: https://charts.bitnami.com/bitnami
+  releaseName: nginx-ingress
+  namespace: nginx-ingress
+  version: 9.2.1
 # - name: prometheus
 #   repo: https://prometheus-community.github.io/helm-charts
 #   version: 15.9.0
