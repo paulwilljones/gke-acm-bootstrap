@@ -9,7 +9,7 @@ patchesJson6902:
   path: ./annotation.yaml
 
 # commonAnnotations:
-#   #config.kubernetes.io/depends-on: "admissionregistration.k8s.io/ValidatingWebhookConfiguration/gatekeeper-validating-webhook-configuration"
+#   config.kubernetes.io/depends-on: "admissionregistration.k8s.io/ValidatingWebhookConfiguration/gatekeeper-validating-webhook-configuration"
 #   config.kubernetes.io/depends-on: apps/namespaces/gatekeeper-system/Deployment/gatekeeper-controller-manager
 
 helmCharts:
