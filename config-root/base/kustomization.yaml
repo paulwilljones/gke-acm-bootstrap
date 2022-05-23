@@ -21,18 +21,18 @@ helmCharts:
   version: 6.29.4
   releaseName: grafana
   namespace: grafana
-# - name: external-secrets
-#   repo: https://charts.external-secrets.io
-#   version: 0.5.3
-#   releaseName: external-secrets
-#   namespace: external-secrets
-#   includeCRDs: false
-#   valuesInline:
-#     installCRDs: false # CRDs have status in the definition which fails reconciler https://g.co/cloud/acm-errors#knv1045
-#     certController:
-#       create: false
-#     webhook:
-#       create: false
+- name: external-secrets
+  repo: https://charts.external-secrets.io
+  version: 0.5.3
+  releaseName: external-secrets
+  namespace: external-secrets
+  includeCRDs: false
+  valuesInline:
+    installCRDs: false # CRDs have status in the definition which fails reconciler https://g.co/cloud/acm-errors#knv1045
+    certController:
+      create: false
+    webhook:
+      create: false
 # - name: external-dns
 #   repo: https://charts.bitnami.com/bitnami
 #   releaseName: external-dns
