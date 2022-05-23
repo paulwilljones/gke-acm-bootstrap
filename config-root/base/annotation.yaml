@@ -1,4 +1,4 @@
 - op: add
   path: /metadata/annotations
   value:
-    config.kubernetes.io/depends-on: apps/namespaces/external-secrets/Deployment/external-secrets,apps/namespaces/gatekeeper-system/Deployment/gatekeeper-controller-manager
+    config.kubernetes.io/depends-on: apps/namespaces/external-secrets/Deployment/external-secrets,admissionregistration.k8s.io/ValidatingWebhookConfiguration/gatekeeper-validating-webhook-configuration
