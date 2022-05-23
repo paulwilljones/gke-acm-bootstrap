@@ -7,6 +7,12 @@ gcloud beta container hub config-management enable
 gcloud beta container hub config-management apply --membership=gke-acm-bootstrap --config=apply-spec.yaml
 ```
 
+## Policy Controller
+
+```sh
+gcloud beta container hub config-management apply --membership=gke-acm-bootstrap --config=policy-controller-spec.yaml
+```
+
 ## Cleanup
 
 ```sh

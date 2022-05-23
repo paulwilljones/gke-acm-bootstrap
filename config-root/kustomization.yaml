@@ -1,5 +1,6 @@
 resources:
 - base/
+- cis-k8s-v1.5.1/
 
 patches:
 - path: ignore-deployment-mutation-patch.yaml

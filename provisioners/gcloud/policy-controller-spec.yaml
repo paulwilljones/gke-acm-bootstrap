@@ -7,6 +7,7 @@ spec:
     syncBranch: develop
     secretType: none
     policyDir: config-root
+    preventDrift: true
   policyController:
     enabled: true
     exemptableNamespaces: ["kube-system", "config-management-system", "config-management-monitoring", "resource-group-system", "asm-system", "gke-connect"]
