@@ -10,4 +10,4 @@ spec:
     preventDrift: true
   policyController:
     enabled: true
-    exemptableNamespaces: ["kube-system", "config-management-system", "config-management-monitoring", "resource-group-system", "asm-system", "gke-connect"]
+    #exemptableNamespaces: ["kube-system", "config-management-system", "config-management-monitoring", "resource-group-system", "asm-system", "gke-connect"]
