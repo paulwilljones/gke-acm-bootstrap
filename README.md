@@ -62,10 +62,16 @@ What this pattern encourages is for cluster initialisation to be part of the pro
     - kubernetes-sigs/external-dns resources don't include a `metadata.namespace` field in the templates
     - therefore the hydrated manifests don't get namespaced and get applied to `default` namespace
 
+### `depends_on`
+
 - `depends_on` annotation fails when referencing Policy Controller resources
-  - `config.kubernetes.io/depends-on: admissionregistration.k8s.io/ValidatingWebhookConfiguration/gatekeeper-validating-webhook-configuration`
-    - `kubectl logs -n config-management-system root-reconciler -c reconciler`
+    - `config.kubernetes.io/depends-on: admissionregistration.k8s.io/ValidatingWebhookConfiguration/gatekeeper-validating-webhook-configuration`
+        - `kubectl logs -n config-management-system root-reconciler -c reconciler`
         ```sh
         [2] KNV2009: invalid object: "_cert-manager__Namespace": invalid "config.kubernetes.io/depends-on" annotation: external dependency: /Namespace/cert-manager -> admissionregistration.k8s.io/ValidatingWebhookConfiguration/gatekeeper-validating-webhook-configuration  For more information, see https://g.co/cloud/acm-errors#knv2009        
         ```
-  - `config.kubernetes.io/depends-on: apps/namespaces/gatekeeper-system/Deployment/gatekeeper-controller-manager`
+    - `config.kubernetes.io/depends-on: apps/namespaces/gatekeeper-system/Deployment/gatekeeper-controller-manager`
+        - `kubectl logs -n config-management-system root-reconciler -c reconciler`
+        ```sh
+        [2] KNV2009: invalid object: "_cert-manager__Namespace": invalid "config.kubernetes.io/depends-on" annotation: external dependency: /Namespace/cert-manager -> apps/namespaces/gatekeeper-system/Deployment/gatekeeper-controller-manager  For more information, see https://g.co/cloud/acm-errors#knv2009
+        ```
